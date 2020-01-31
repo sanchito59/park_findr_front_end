@@ -20,15 +20,15 @@
     <tbody>
       <% @locations.each do |location| %>
         <tr>
-          <td><%= location['continent'] %></td>
-          <td><%= location['country'] %></td>
-          <td><%= location['city'] %></td>
-          <td><%= location['community'] %></td>
-          <td><%= location['street_address'] %></td>
-          <td><%= location['longitude'] %></td>
-          <td><%= location['latitude'] %></td>
-          <td><%= link_to 'Show', location_path(location['id']) %></td>
-          <td><%= link_to 'Edit', edit_location_path(location['id']) %></td>
+          <td class="location-info"><%= location['continent'] %></td>
+          <td class="location-info"><%= location['country'] %></td>
+          <td class="location-info"><%= location['city'] %></td>
+          <td class="location-info"><%= location['community'] %></td>
+          <td class="location-info"><%= location['street_address'] %></td>
+          <td class="location-info"><%= location['longitude'] %></td>
+          <td class="location-info"><%= location['latitude'] %></td>
+          <td class="location-info"><%= link_to 'Show', location_path(location['id']) %></td>
+          <td class="location-info"><%= link_to 'Edit', edit_location_path(location['id']) %></td>
         </tr>
       <% end %>
     </tbody>

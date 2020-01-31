@@ -15,3 +15,27 @@
  */
  /* Custom bootstrap variables must be set or imported *before* bootstrap. */
  @import "bootstrap";
+
+body {
+    background-color: #A1B091;
+    font-family: 'Martel Sans', sans-serif;
+
+}
+
+#page-title {
+    font-size: 64px;
+    font-family: 'Roboto Slab', serif;
+}
+
+#location-table {
+    font-family: 'Slabo 27px', serif;
+    background-color: #B3B180;
+    color: #3E3505;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+#location-column-names {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+}

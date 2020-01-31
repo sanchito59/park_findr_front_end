@@ -1,0 +1,72 @@
+<%= form_with(model: park, local: true) do |form| %>
+  <% if park.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(park.errors.count, "error") %> prohibited this park from being saved:</h2>
+
+      <ul>
+      <% park.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :climate %>
+    <%= form.text_field :climate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :operating_hours %>
+    <%= form.text_field :operating_hours %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dog_friendly %>
+    <%= form.check_box :dog_friendly %>
+  </div>
+
+  <div class="field">
+    <%= form.label :activities %>
+    <%= form.text_field :activities %>
+  </div>
+
+  <div class="field">
+    <%= form.label :national_park %>
+    <%= form.check_box :national_park %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fees %>
+    <%= form.number_field :fees %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lodging %>
+    <%= form.check_box :lodging %>
+  </div>
+
+  <div class="field">
+    <%= form.label :camping %>
+    <%= form.check_box :camping %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :size %>
+    <%= form.text_field :size %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location_id %>
+    <%= form.number_field :location_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

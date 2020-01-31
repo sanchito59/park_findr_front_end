@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Climate:</strong>
+  <%= @park.climate %>
+</p>
+
+<p>
+  <strong>Operating hours:</strong>
+  <%= @park.operating_hours %>
+</p>
+
+<p>
+  <strong>Dog friendly:</strong>
+  <%= @park.dog_friendly %>
+</p>
+
+<p>
+  <strong>Activities:</strong>
+  <%= @park.activities %>
+</p>
+
+<p>
+  <strong>National park:</strong>
+  <%= @park.national_park %>
+</p>
+
+<p>
+  <strong>Fees:</strong>
+  <%= @park.fees %>
+</p>
+
+<p>
+  <strong>Lodging:</strong>
+  <%= @park.lodging %>
+</p>
+
+<p>
+  <strong>Camping:</strong>
+  <%= @park.camping %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @park.name %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @park.size %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @park.location_id %>
+</p>
+
+<%= link_to 'Edit', edit_park_path(@park) %> |
+<%= link_to 'Back', parks_path %>

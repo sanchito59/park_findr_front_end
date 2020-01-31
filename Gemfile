@@ -13,8 +13,6 @@ gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-gem 'duktape'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -42,6 +40,13 @@ gem 'font-awesome-sass', '~> 5.12.0'
 gem 'bootstrap', '~> 4.4.1'
 #jQuery
 gem 'jquery-rails'
+
+gem 'mime-types'
+gem 'netrc'
+gem 'http-accept'
+gem 'http-cookie'
+gem 'rest-client'
+gem 'json'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

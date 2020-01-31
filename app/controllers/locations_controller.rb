@@ -9,6 +9,7 @@ class LocationsController < ApplicationController
     response = RestClient.get 'http://localhost:3000/locations'
     @locations = response.body
     @locations = JSON.parse(@locations)
+    @locations = Kaminari.paginate_array(@locations).page(params[:page]).per(25)
     render :index
   end
 

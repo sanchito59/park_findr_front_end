@@ -2,7 +2,8 @@
 
 <% if @locations.any? %>
   <h1>Locations</h1>
-
+  <%= paginate @locations %>
+  <br>
   <table>
     <thead>
       <tr>
@@ -33,7 +34,11 @@
       <% end %>
     </tbody>
   </table>
-
+  <br>
+  <%= link_to 'New Location', new_location_path %>
+  <br>
+  <br>
+  <%= paginate @locations %>
   <br>
 
   <% else %>

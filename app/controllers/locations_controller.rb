@@ -10,11 +10,20 @@ class LocationsController < ApplicationController
     response = RestClient.get 'http://localhost:3000/locations'
     @locations = response.body
     @locations = JSON.parse(@locations)
+    render :index
   end
 
   # GET /locations/1
   # GET /locations/1.json
   def show
+    response = RestClient.get("http://localhost:3000/locations/#{params[:id]}")
+    @location = response.body
+    @location = JSON.parse(@location)
+    # response = RestClient.get("http://localhost:3000/locations/#{params[:id]}/parks")
+    # @parks = response.body
+    # @parks = JSON.parse(@parks)
+
+    render :show
   end
 
   # GET /locations/new
@@ -24,6 +33,11 @@ class LocationsController < ApplicationController
 
   # GET /locations/1/edit
   def edit
+    response = RestClient.get("http://localhost:3000/locations/#{params[:id]}")
+    @location = response.body
+    @location = JSON.parse(@location)
+    @location = location.new(id: @location["id"], country: @location["country"], city: @location["city"], specific_location: @location["specific_location"])
+    render :edit
   end
 
   # POST /locations
@@ -69,7 +83,9 @@ class LocationsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_location
-      @location = Location.find(params[:id])
+      response = RestClient.get("http://localhost:3000/locations/#{params[:id]}")
+      @location = response.body
+      @location = JSON.parse(@location)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

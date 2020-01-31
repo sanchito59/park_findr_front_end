@@ -1,3 +1,5 @@
+require 'rest-client'
+
 class ParksController < ApplicationController
   before_action :set_park, only: [:show, :edit, :update, :destroy]
 

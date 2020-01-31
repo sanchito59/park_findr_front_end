@@ -54,6 +54,7 @@ class LocationsController < ApplicationController
 
   # PATCH/PUT
   def update
+    binding.pry
     response = RestClient.put("http://localhost:3000/locations/#{params[:id]}")
     respond_to do |format|
       if @location.update(location_params)

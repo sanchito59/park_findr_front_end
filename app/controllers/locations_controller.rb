@@ -39,8 +39,17 @@ class LocationsController < ApplicationController
 
   # POST
   def create
-    @location = Location.new(location_params)
+    @location = RestClient.post("http://localhost:3000/locations/", {
+      continent: location_params['continent'], 
+      country: location_params['country'], 
+      city: location_params['city'],
+      community: location_params['community'],
+      street_address: location_params['street_address'],
+      longitude: location_params['longitude'],
+      latitude: location_params['latitude'],
+      })
     respond_to do |format|
+      binding.pry
       if @location.save
         format.html { redirect_to @location, notice: 'Location was successfully created.' }
         format.json { render :show, status: :created, location: @location }

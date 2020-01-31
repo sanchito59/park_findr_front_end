@@ -19,9 +19,9 @@ class LocationsController < ApplicationController
     response = RestClient.get("http://localhost:3000/locations/#{params[:id]}")
     @location = response.body
     @location = JSON.parse(@location)
-    # response = RestClient.get("http://localhost:3000/locations/#{params[:id]}/parks")
-    # @parks = response.body
-    # @parks = JSON.parse(@parks)
+    response = RestClient.get("http://localhost:3000/locations/#{params[:id]}/parks")
+    @parks = response.body
+    @parks = JSON.parse(@parks)
 
     render :show
   end
@@ -36,7 +36,7 @@ class LocationsController < ApplicationController
     response = RestClient.get("http://localhost:3000/locations/#{params[:id]}")
     @location = response.body
     @location = JSON.parse(@location)
-    @location = location.new(id: @location["id"], country: @location["country"], city: @location["city"], specific_location: @location["specific_location"])
+    @location = Location.new(id: @location["id"], continent: @location['continent'], country: @location["country"], city: @location["city"], community: @location['community'], street_address: @location['street_address'], longitude: @location['longitude'], latitude: @location['latitude'])
     render :edit
   end
 
@@ -73,7 +73,7 @@ class LocationsController < ApplicationController
   # DELETE /locations/1
   # DELETE /locations/1.json
   def destroy
-    @location.destroy
+    response = RestClient.delete("http://localhost:3000/locations/#{params[:id]}")
     respond_to do |format|
       format.html { redirect_to locations_url, notice: 'Location was successfully destroyed.' }
       format.json { head :no_content }

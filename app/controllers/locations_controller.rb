@@ -4,8 +4,7 @@ require 'json'
 class LocationsController < ApplicationController
   before_action :set_location, only: [:show, :edit, :update, :destroy]
 
-  # GET /locations
-  # GET /locations.json
+  # GET
   def index
     response = RestClient.get 'http://localhost:3000/locations'
     @locations = response.body
@@ -13,8 +12,7 @@ class LocationsController < ApplicationController
     render :index
   end
 
-  # GET /locations/1
-  # GET /locations/1.json
+  # GET
   def show
     response = RestClient.get("http://localhost:3000/locations/#{params[:id]}")
     @location = response.body
@@ -22,16 +20,15 @@ class LocationsController < ApplicationController
     response = RestClient.get("http://localhost:3000/locations/#{params[:id]}/parks")
     @parks = response.body
     @parks = JSON.parse(@parks)
-
     render :show
   end
 
-  # GET /locations/new
+  # GET
   def new
     @location = Location.new
   end
 
-  # GET /locations/1/edit
+  # GET
   def edit
     response = RestClient.get("http://localhost:3000/locations/#{params[:id]}")
     @location = response.body
@@ -40,11 +37,9 @@ class LocationsController < ApplicationController
     render :edit
   end
 
-  # POST /locations
-  # POST /locations.json
+  # POST
   def create
     @location = Location.new(location_params)
-
     respond_to do |format|
       if @location.save
         format.html { redirect_to @location, notice: 'Location was successfully created.' }
@@ -56,9 +51,9 @@ class LocationsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /locations/1
-  # PATCH/PUT /locations/1.json
+  # PATCH/PUT
   def update
+    response = RestClient.put("http://localhost:3000/locations/#{params[:id]}")
     respond_to do |format|
       if @location.update(location_params)
         format.html { redirect_to @location, notice: 'Location was successfully updated.' }
@@ -70,11 +65,10 @@ class LocationsController < ApplicationController
     end
   end
 
-  # DELETE /locations/1
-  # DELETE /locations/1.json
+  # DELETE
   def destroy
-    response = RestClient.delete("http://localhost:3000/locations/#{params[:id]}")
-    respond_to do |format|
+      response = RestClient.delete("http://localhost:3000/locations/#{params[:id]}")
+      respond_to do |format|
       format.html { redirect_to locations_url, notice: 'Location was successfully destroyed.' }
       format.json { head :no_content }
     end

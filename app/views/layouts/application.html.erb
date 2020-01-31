@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ParkFrontEnd</title>
+    <title>Park Findr</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Martel+Sans|Roboto+Condensed|Roboto+Slab|Slabo+27px&display=swap" rel="stylesheet">
   </head>
 
   <body>
+    <h1 id="page-title">Park Findr</h1>
     <%= yield %>
   </body>
 </html>

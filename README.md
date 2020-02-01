@@ -3,11 +3,10 @@
 ## By **Chris Sanchez**
 
 
-**Park Findr** description...
+**Park Findr** is an front-end built with Ruby / Rails, HTML5, CSS3, and other technologies. It is intended to be used in conjuction with the [Park Findr API](https://github.com/sanchito59/park_findr_api.git), a full CRUD (Create, Read, Update, Delete) API built with Rails. **Park Findr** is a work-in-progress and does not yet have full CRUD functionality on the front-end for Locations and Parks. 
 
 ![screenshot of landing page for product website](https://i.imgur.com/pgWVWt6.png "read")
 
-<!-- ![screenshot of review](https://i.imgur.com/29d31kb.png "read") -->
 - - - -
 ### Setup/Installation Requirements
 

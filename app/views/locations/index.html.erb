@@ -34,10 +34,12 @@
     </tbody>
   </table>
   <br>
+  <div class="pagination-footer">
   <%= link_to 'New Location', new_location_path %>
   <br>
   <br>
-  <%= paginate @locations %>
+    <%= paginate @locations %>
+  </div>
   <br>
 
   <% else %>
